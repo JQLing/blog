@@ -80,7 +80,7 @@
 <link href="/blog/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,Blog,博客,搭建博客" />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -98,34 +98,19 @@
 
 
 
-<meta name="description" content="准备工作：搭建Hexo博客,要
-安装 Node.js
-安装 Git
-在 GitHub 上注册账号
-
-常用的 hexo 命令12345678hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口是4000）hexo deploy #部署到GitHubhexo clean  #清除缓存 网页正常情况下可以忽略此条命令hexo new &amp;quot">
+<meta name="description" content="每个函数function都有一个prototype，即原型。每个对象都有一个隐藏的属性__proto__，对象的__proto__指向创建它的函数的prototype。12345function Test() &amp;#123;&amp;#125;Test.prototype.name = &apos;小明&apos;;var test = new Test();console.log(test.name);
+test.__pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo搭建博客（一）">
-<meta property="og:url" content="https://JQLing.github.io/blog/2016/11/06/buildBlog1/index.html">
+<meta property="og:title" content="JavaScript隐式原型">
+<meta property="og:url" content="https://JQLing.github.io/blog/2017/02/10/ImplicitPrototype /index.html">
 <meta property="og:site_name" content="桃之夭夭 's blog">
-<meta property="og:description" content="准备工作：搭建Hexo博客,要
-安装 Node.js
-安装 Git
-在 GitHub 上注册账号
-
-常用的 hexo 命令12345678hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口是4000）hexo deploy #部署到GitHubhexo clean  #清除缓存 网页正常情况下可以忽略此条命令hexo new &amp;quot">
-<meta property="og:image" content="http://okw9pf1mr.bkt.clouddn.com/clone.png">
-<meta property="og:image" content="http://okw9pf1mr.bkt.clouddn.com/default.JPG">
-<meta property="og:updated_time" content="2017-02-10T08:47:54.512Z">
+<meta property="og:description" content="每个函数function都有一个prototype，即原型。每个对象都有一个隐藏的属性__proto__，对象的__proto__指向创建它的函数的prototype。12345function Test() &amp;#123;&amp;#125;Test.prototype.name = &apos;小明&apos;;var test = new Test();console.log(test.name);
+test.__pro">
+<meta property="og:updated_time" content="2017-02-10T13:31:08.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo搭建博客（一）">
-<meta name="twitter:description" content="准备工作：搭建Hexo博客,要
-安装 Node.js
-安装 Git
-在 GitHub 上注册账号
-
-常用的 hexo 命令12345678hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口是4000）hexo deploy #部署到GitHubhexo clean  #清除缓存 网页正常情况下可以忽略此条命令hexo new &amp;quot">
-<meta name="twitter:image" content="http://okw9pf1mr.bkt.clouddn.com/clone.png">
+<meta name="twitter:title" content="JavaScript隐式原型">
+<meta name="twitter:description" content="每个函数function都有一个prototype，即原型。每个对象都有一个隐藏的属性__proto__，对象的__proto__指向创建它的函数的prototype。12345function Test() &amp;#123;&amp;#125;Test.prototype.name = &apos;小明&apos;;var test = new Test();console.log(test.name);
+test.__pro">
 
 
 
@@ -143,7 +128,7 @@
   };
 </script>
 
-  <title> Hexo搭建博客（一） | 桃之夭夭 's blog </title>
+  <title> JavaScript隐式原型 | 桃之夭夭 's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -316,7 +301,7 @@
             
             
               
-                Hexo搭建博客（一）
+                JavaScript隐式原型
               
             
           </h1>
@@ -328,8 +313,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-06T16:25:04+08:00" content="2016-11-06">
-              2016-11-06
+            <time itemprop="dateCreated" datetime="2017-02-10T15:47:12+08:00" content="2017-02-10">
+              2017-02-10
             </time>
           </span>
 
@@ -342,8 +327,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/blog/categories/Blog/" itemprop="url" rel="index">
-                    <span itemprop="name">Blog</span>
+                  <a href="/blog/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
                   </a>
                 </span>
 
@@ -358,8 +343,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/2016/11/06/buildBlog1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/buildBlog1/" itemprop="commentsCount"></span>
+                <a href="/blog/2017/02/10/ImplicitPrototype /#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/10/ImplicitPrototype /" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -369,7 +354,7 @@
 
           
           
-             <span id="/blog/2016/11/06/buildBlog1/" class="leancloud_visitors" data-flag-title="Hexo搭建博客（一）">
+             <span id="/blog/2017/02/10/ImplicitPrototype /" class="leancloud_visitors" data-flag-title="JavaScript隐式原型">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,42 +376,15 @@
       
 
       
-        <h3 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h3><h4 id="搭建Hexo博客-要"><a href="#搭建Hexo博客-要" class="headerlink" title="搭建Hexo博客,要"></a>搭建Hexo博客,要</h4><ul>
-<li>安装 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></li>
-<li>安装 <a href="https://git-scm.com/" target="_blank" rel="external">Git</a></li>
-<li>在 <a href="https://github.com/" target="_blank" rel="external">GitHub</a> 上注册账号</li>
-</ul>
-<h4 id="常用的-hexo-命令"><a href="#常用的-hexo-命令" class="headerlink" title="常用的 hexo 命令"></a>常用的 hexo 命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">hexo generate #生成静态页面至public目录</div><div class="line">hexo server #开启预览访问端口（默认端口是4000）</div><div class="line">hexo deploy #部署到GitHub</div><div class="line">hexo clean  #清除缓存 网页正常情况下可以忽略此条命令</div><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo new page &quot;pageName&quot; #新建页面</div><div class="line">hexo help #查看帮助</div><div class="line">hexo version #查看Hexo版本</div></pre></td></tr></table></figure>
-<h3 id="搭建博客："><a href="#搭建博客：" class="headerlink" title="搭建博客："></a>搭建博客：</h3><ol>
-<li><p>在 GitHub 上新建一个仓库 blog ,将仓库克隆到本地<br><img src="http://okw9pf1mr.bkt.clouddn.com/clone.png" alt="SSH"><br>在 git-bash 上输入命令，SSH 即刚刚复制的代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone SSH</div></pre></td></tr></table></figure>
-</li>
-<li><p>全局安装 Hexo,输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -g hexo (或 npm install -g hexo)</div></pre></td></tr></table></figure>
-</li>
-<li><p>进入克隆出来的本地仓库 blog，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">hexo g (或 hexo generate)</div><div class="line">hexo s (或 hexo server)</div></pre></td></tr></table></figure>
-</li>
-<li><p>打开浏览器，输入 <code>localhost:4000</code>，看到的界面即 Hexo 的默认主题。<br><img src="http://okw9pf1mr.bkt.clouddn.com/default.JPG" alt="默认主题"></p>
-</li>
-<li><p>打开根目录下的站点配置文件 <code>_config.yml</code> (区别 theme下的主题配置文件 _config.yml )，可以参考 <a href="http://blog.csdn.net/xuezhisdc/article/details/53130383" target="_blank" rel="external">hexo配置教程</a> 填写信息。填写时 : 后的空格不能省略。<br>下面用户名为 GitHub 的用户名。（你必须建一个这样的仓库：用户名.github.io，并且这个仓库里面需有一个index.html）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url: https:用户名.github.io/blog</div><div class="line">root: /blog</div></pre></td></tr></table></figure>
-<p> 在 <em>_config.yml</em> 文件的最下面有个 deploy:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">type: git</div><div class="line">repository: github上blog的SSH</div><div class="line">branch: gh-pages</div></pre></td></tr></table></figure>
-</li>
-<li><p>在 git-bash 上，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
-<p> 此时可以再次打开浏览器，刷新 <em>localhost:4000</em>，看看刚刚修改的内容是否显示了。</p>
-</li>
-<li><p>回到 git-bash 上，先安装一个插件，这样才能上传到 GitHub 上，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p> 在本地修改完成了，就可以上传到GitHub上，输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d (或 hexo deploy )</div></pre></td></tr></table></figure>
-<p> 此时可以在浏览器地址栏输入根目录下 <code>_config.yml</code> 文件中的 <code>url</code></p>
-</li>
-<li><p>选择 <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo官方主题</a>，并配置主题。例如<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">配置 NexT 主题</a>。此处花的时间会多一点。修改完再次执行步骤6，7。</p>
-</li>
-</ol>
+        <p>每个函数function都有一个prototype，即原型。<br>每个对象都有一个隐藏的属性__proto__，对象的__proto__指向创建它的函数的prototype。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Test</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line">Test.prototype.name = <span class="string">'小明'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> Test();</div><div class="line"><span class="built_in">console</span>.log(test.name);</div></pre></td></tr></table></figure></p>
+<p>test.__proto__ === Test.prototype<br>这里的__proto__为<code>隐式原型</code>。<br>再举个例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div></pre></td></tr></table></figure></p>
+<p>obj这个对象是被 Object 函数创建出来的，所以 obj.__proto__ === Object.prototype。<br>注意：<em>自定义函数</em> 也是被 Object 函数创建出来的，所以，它的__proto__也指向Object.prototype。</p>
+<h4 id="Object-prototype的-proto"><a href="#Object-prototype的-proto" class="headerlink" title="Object.prototype的__proto__"></a>Object.prototype的__proto__</h4><p>Object.prototype也是一个对象，它的__proto__指向哪里呢，指向<code>null</code>。Object.prototype是所有对象的祖先。</p>
+<h4 id="函数的-proto"><a href="#函数的-proto" class="headerlink" title="函数的 __proto__"></a>函数的 __proto__</h4><p>函数是被 Function 创建的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">text</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line"><span class="built_in">console</span>.log(text <span class="keyword">instanceof</span> ?);  <span class="comment">//?= Function</span></div></pre></td></tr></table></figure></p>
+<p>实际上<a href="http://www.cnblogs.com/wangfupeng1988/p/3979533.html" target="_blank" rel="external">instanceof</a>表示的就是一种继承关系，或者原型链的结构。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> x + <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(fn(<span class="number">5</span>));</div></pre></td></tr></table></figure></p>
+<p>fn.__proto__ === Function.prototype。</p>
+<h4 id="Function-prototype的-proto"><a href="#Function-prototype的-proto" class="headerlink" title="Function.prototype的 __proto__"></a>Function.prototype的 __proto__</h4><p>Function.prototype的 __proto__ === Object.prototype。</p>
+<p>Object.__proto__ === Function.prototype<br>Function.__proto__ === Function.prototype</p>
 
       
     </div>
@@ -448,9 +406,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Hexo/" rel="tag">#Hexo</a>
-          
-            <a href="/blog/tags/Blog/" rel="tag">#Blog</a>
+            <a href="/blog/tags/JS/" rel="tag">#JS</a>
           
         </div>
       
@@ -459,12 +415,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/blog/2017/02/07/prototype/" rel="next" title="JavaScript原型">
+                <i class="fa fa-chevron-left"></i> JavaScript原型
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2016/11/06/buildBlog2/" rel="prev" title="Hexo搭建博客（二）">
-                Hexo搭建博客（二） <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/02/12/inherit/" rel="prev" title="JavaScript继承">
+                JavaScript继承 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -514,8 +474,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/06/buildBlog1/"
-           data-title="Hexo搭建博客（一）" data-url="https://JQLing.github.io/blog/blog/2016/11/06/buildBlog1/">
+      <div class="ds-thread" data-thread-key="2017/02/10/ImplicitPrototype /"
+           data-title="JavaScript隐式原型" data-url="https://JQLing.github.io/blog/blog/2017/02/10/ImplicitPrototype /">
       </div>
     
   </div>
@@ -665,7 +625,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备工作："><span class="nav-number">1.</span> <span class="nav-text">准备工作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搭建Hexo博客-要"><span class="nav-number">1.1.</span> <span class="nav-text">搭建Hexo博客,要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的-hexo-命令"><span class="nav-number">1.2.</span> <span class="nav-text">常用的 hexo 命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搭建博客："><span class="nav-number">2.</span> <span class="nav-text">搭建博客：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-prototype的-proto"><span class="nav-number">1.</span> <span class="nav-text">Object.prototype的__proto__</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的-proto"><span class="nav-number">2.</span> <span class="nav-text">函数的 __proto__</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Function-prototype的-proto"><span class="nav-number">3.</span> <span class="nav-text">Function.prototype的 __proto__</span></a></li></ol></div>
             
           </div>
         </section>

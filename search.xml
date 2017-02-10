@@ -3,30 +3,65 @@
   
     
     <entry>
-      <title><![CDATA[JavaScript闭包的理解]]></title>
-      <url>%2Fblog%2F2017%2F02%2F07%2Fclosure%2F</url>
+      <title><![CDATA[JavaScript闭包]]></title>
+      <url>%2Fblog%2F2017%2F02%2F15%2Fclosure%2F</url>
       <content type="text"></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[函数作为返回值]]></title>
+      <url>%2Fblog%2F2017%2F02%2F14%2FreturnFunction%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[JavaScript继承]]></title>
+      <url>%2Fblog%2F2017%2F02%2F12%2Finherit%2F</url>
+      <content type="text"><![CDATA[继承——原型链 先看一段代码：12345678function Text() &#123;&#125;;Text.prototype.name = '小明';Text.prototype.sex = 'man';var text = new Text();text.name = '小红';console.log(text.name); // 小红console.log(text.sex); // man 访问一个对象的属性时，先在自身的属性中查找，如果没有，再沿着__proto__这条链向上查找，这就是原型链。 如何区分一个属性到底是自身的还是从原型中找到的，就要用到 hasOwnProperty 了。接着上面的代码继续写：123456var item;for(item in text)&#123; if(text.hasOwnProperty(item))&#123; console.log(item); // name &#125;&#125; 因为对象的原型链是沿着__proto__这条线走的，在查找 text.hasOwnProperty 属性时，就会顺着原型链一直查找到 Object.prototype。 所有的对象的原型链都会找到 Object.prototype，所有的对象都会有 Object.prototype的方法。这就是继承。]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[JavaScript隐式原型]]></title>
+      <url>%2Fblog%2F2017%2F02%2F10%2FImplicitPrototype%20%2F</url>
+      <content type="text"><![CDATA[每个函数function都有一个prototype，即原型。每个对象都有一个隐藏的属性__proto__，对象的__proto__指向创建它的函数的prototype。12345function Test() &#123;&#125;Test.prototype.name = '小明';var test = new Test();console.log(test.name); test.__proto__ === Test.prototype这里的__proto__为隐式原型。再举个例子：1var obj = &#123;&#125;; obj这个对象是被 Object 函数创建出来的，所以 obj.__proto__ === Object.prototype。注意：自定义函数 也是被 Object 函数创建出来的，所以，它的__proto__也指向Object.prototype。 Object.prototype的__proto__Object.prototype也是一个对象，它的__proto__指向哪里呢，指向null。Object.prototype是所有对象的祖先。 函数的 __proto__函数是被 Function 创建的。12function text() &#123;&#125;;console.log(text instanceof ?); //?= Function 实际上instanceof表示的就是一种继承关系，或者原型链的结构。1234function fn(x) &#123; return x + 10;&#125;console.log(fn(5)); fn.__proto__ === Function.prototype。 Function.prototype的 __proto__Function.prototype的 __proto__ === Object.prototype。 Object.__proto__ === Function.prototypeFunction.__proto__ === Function.prototype]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[JavaScript原型]]></title>
+      <url>%2Fblog%2F2017%2F02%2F07%2Fprototype%2F</url>
+      <content type="text"><![CDATA[对象是属性的集合，函数也是一种对象，每一个函数都有一个属性prototype,它的属性值指向一个对象，而这个对象有一个constructor属性，属性值又指向函数。图解如下，SuperType是一个函数原型对象除了constructor属性，还有其他的属性。例如Object：例如：12345function text()&#123;&#125;;text.prototype.name = '小明';text.prototype.getYear = function()&#123; return 2000;&#125;;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[函数和对象的关系]]></title>
+      <url>%2Fblog%2F2017%2F02%2F06%2FfunctionAndObject%2F</url>
+      <content type="text"><![CDATA[基本数据类型：Undefined、Null、Boolean、Number、String常见的引用类型：Object、Array、Function、Date、RegExp值类型判断：typeof ，引用类型判断：instanceoftypeof在判断到引用类型的时候，返回值只有object/function 对象是属性的集合，值类型不是对象，一切（引用类型）都是对象。以下用 console.log(); 打出：1234typeof (null) //objecttypeof (new Number(10)) //objecttypeof (&#123; a: 10, b: 20 &#125;) //objecttypeof ([1, 'a', true]) //object 12var obj = &#123; a: 10, b: 20 &#125;;console.log(obj instanceof ?); //?= Object 12var arr = [1, 'a', true];console.log(arr instanceof ?); //?= Array 注意：自定义函数：12var fn = function() &#123;&#125;;console.log(fn instanceof ?); //?= Object 1234function text() &#123;&#125;;console.log(text instanceof ?); //?= Functionvar fn=new text() &#123;&#125;;console.log(fn instanceof ?); //?= Object 1234typeof (Object) //functiontypeof (Array) //functiontypeof (function() &#123;&#125;) //functiontypeof (Function) //function 在typeof的输出类型中，function和object都是对象，为何却要输出两种答案呢？都叫做object不行吗？——当然不行。 函数是一种对象，函数不像数组一样——你可以说数组是对象的一种，因为数组就像是对象的一个子集。函数与对象之间，却不仅仅是一种包含和被包含的关系，函数和对象之间的关系比较复杂，甚至有一点“鸡生蛋，蛋生鸡”的逻辑。 对象都是通过函数创建的1234// var obj = &#123; a: 10, b: 20 &#125;;// var arr = [5, 'x', true];var obj = new Object();var arr = new Array(); 而其中的obj、arr是对象，而 Object 和 Array 都是函数。]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[收藏夹]]></title>
       <url>%2Fblog%2F2017%2F02%2F05%2Flink%2F</url>
-      <content type="text"><![CDATA[&emsp;&emsp;以前在别处看到的对我理解比较深刻的东西，我都把链接贴在了下面，暂时先放这么些，以后还会慢慢补充滴！ CSS深入理解之float浮动 http://www.imooc.com/video/2887 CSS深入理解之absolut http://www.imooc.com/learn/192 js外部样式和style属性的添加移除 http://blog.csdn.net/mafan121/article/details/45840799 js闭包的理解 http://www.cnblogs.com/wangfupeng1988/p/3994065.html js函数作为返回值详解http://blog.csdn.net/u011113654/article/details/51672308 jQuery源码解析 http://www.imooc.com/learn/172]]></content>
+      <content type="text"><![CDATA[&emsp;&emsp;以前在别处看到的对我理解有深刻帮助的东西，我都把链接贴在了下面，暂时先放这么些，以后还会慢慢补充滴！ CSS深入理解之float浮动 http://www.imooc.com/video/2887 CSS深入理解之absolut http://www.imooc.com/learn/192 js闭包的理解 http://www.cnblogs.com/wangfupeng1988/p/3994065.html js原型 http://www.cnblogs.com/wangfupeng1988/p/3978131.html js隐式原型http://www.cnblogs.com/wangfupeng1988/p/3979290.html js函数作为返回值详解http://blog.csdn.net/u011113654/article/details/51672308 jQuery源码解析 http://www.imooc.com/learn/172]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[Hexo搭建博客（二）]]></title>
       <url>%2Fblog%2F2016%2F11%2F06%2FbuildBlog2%2F</url>
-      <content type="text"><![CDATA[写博客创建文章 Hexo文章目录 为 blog/source/_posts，以 .md为后缀的文件，使用Markdown语法书写。 hexo默认会把所有md文件都转换成html。1hexo new 'postName' 创建草稿 草稿相当于很多博客都有的“私密文章”功能。1hexo new draft "new draft" 以上命令会在source/_drafts目录下生成一个new-draft.md文件。但是这个文件不被显示在页面上，链接也访问不到。也就是说如果你想把某一篇文章移除显示，又不舍得删除，可以把它移动到_drafts目录之中。 如果你希望强行预览草稿，更改根目录下配置文件：1render_drafts: true 如果你希望把草稿变成文章，或者页面：1hexo publish [layout] &lt;filename&gt; 创建标签页面 为文章添加标签，这些标签存应放在标签页面中。 先在根目录下打开git-bash，安装标签插件：1npm i hexo-generator-tag --save 创建标签页面：1hexo new page 'postName' 初次使用 hexo new page “tags” 命令， source下会创建 tags文件夹，该文件夹下的.md文件形成标签页面，用来放文章中的标签。 打开tags中的 .md 文件，在第2个连续3个下划线上面添加1type: "tags" 如果主题当中有多说评论的，可在标签页面中去掉多说评论（不会去掉文章中的多说评论）。也是加在上面同样位置。1comments: false 区分hexo new &#39;postName&#39; 和hexo new page &#39;postName&#39; 命令 hexo new “myblog” 作为文章出现在博文目录里，而hexo new page “tags” 不会作为文章出现在博文目录里。 创建后文件位于不同的路径下：1234$ hexo new "myblog"INFO Created: D:\prof\Git\repository\blog\source\_posts\myblog.md$ hexo new page "tags"INFO Created: D:\prof\Git\repository\blog\source\tags\index.md 创建分类页面1hexo new page 'postName' 把 .md 文件中type: &quot;tags&quot; 换成type: &quot;categories&quot; 创建about页面1hexo new page about 会在source/about中生成index.md。它不在文章列表显示。 404页面 在source下放一个404.html 注意事项 当 source 文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行下面这个命令，然后重新编译。1hexo clean]]></content>
+      <content type="text"><![CDATA[写博客创建文章 Hexo文章目录 为 blog/source/_posts，以 .md为后缀的文件，使用Markdown语法书写。 hexo默认会把所有md文件都转换成html。1hexo new &apos;postName&apos; 创建草稿草稿相当于很多博客都有的“私密文章”功能。1hexo new draft &quot;new draft&quot; 以上命令会在source/_drafts目录下生成一个new-draft.md文件。但是这个文件不被显示在页面上，链接也访问不到。也就是说如果你想把某一篇文章移除显示，又不舍得删除，可以把它移动到_drafts目录之中。如果你希望强行预览草稿，更改根目录下配置文件：1render_drafts: true 如果你希望把草稿变成文章，或者页面：1hexo publish [layout] &lt;filename&gt; 创建标签页面为文章添加标签，这些标签存应放在标签页面中。先在根目录下打开git-bash，安装标签插件：1npm i hexo-generator-tag --save 创建标签页面：1hexo new page &apos;postName&apos; 初次使用 hexo new page “tags” 命令， source下会创建 tags文件夹，该文件夹下的.md文件形成标签页面，用来放文章中的标签。打开tags中的 .md 文件，在第2个连续3个下划线上面添加1type: &quot;tags&quot; 如果主题当中有多说评论的，可在标签页面中去掉多说评论（不会去掉文章中的多说评论）。也是加在上面同样位置。1comments: false 区分hexo new &#39;postName&#39; 和hexo new page &#39;postName&#39; 命令 hexo new “myblog” 作为文章出现在博文目录里，而hexo new page “tags” 不会作为文章出现在博文目录里。 创建后文件位于不同的路径下：1234$ hexo new &quot;myblog&quot;INFO Created: D:\prof\Git\repository\blog\source\_posts\myblog.md$ hexo new page &quot;tags&quot;INFO Created: D:\prof\Git\repository\blog\source\tags\index.md 创建分类页面1hexo new page &apos;postName&apos; 把 .md 文件中type: &quot;tags&quot; 换成type: &quot;categories&quot; 创建about页面1hexo new page about 会在source/about中生成index.md。它不在文章列表显示。 404页面在source下放一个404.html 注意事项当 source 文件夹中的部分资源更改过之后，特别是对文件进行了删除或者路径的改变之后，需要执行下面这个命令，然后重新编译。1hexo clean]]></content>
     </entry>
 
     
     <entry>
       <title><![CDATA[Hexo搭建博客（一）]]></title>
       <url>%2Fblog%2F2016%2F11%2F06%2FbuildBlog1%2F</url>
-      <content type="text"><![CDATA[准备工作：搭建Hexo博客,要 安装 Node.js 安装 Git 在 GitHub 上注册账号 常用的 hexo 命令1234567hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口是4000）hexo deploy #部署到GitHubhexo new "postName" #新建文章hexo new page "pageName" #新建页面hexo help #查看帮助hexo version #查看Hexo版本 搭建博客： 在 GitHub 上新建一个仓库 blog ,将仓库克隆到本地在 git-bash 上输入命令，SSH 即刚刚复制的代码 1git clone SSH 全局安装 Hexo,输入 1npm i -g hexo (或 npm install -g hexo) 进入克隆出来的本地仓库 blog，输入 123hexo inithexo g (或 hexo generate)hexo s (或 hexo server) 打开浏览器，输入 localhost:4000，看到的界面即 Hexo 的默认主题。 打开根目录下的站点配置文件 _config.yml (区别 theme下的主题配置文件 _config.yml )，可以参考 hexo配置教程 填写信息。填写时 : 后的空格不能省略。下面用户名为 GitHub 的用户名。（你必须建一个这样的仓库：用户名.github.io，并且这个仓库里面需有一个index.html） 12url: https:用户名.github.io/blogroot: /blog 在 _config.yml 文件的最下面有个 deploy: 123type: gitrepository: github上blog的SSHbranch: gh-pages 在 git-bash 上，（只要有修改）输入 12hexo ghexo s 此时可以再次打开浏览器，刷新 localhost:4000，看看刚刚修改的内容是否显示了。 回到 git-bash 上，先安装一个插件，这样才能上传到 GitHub 上，输入 1npm install hexo-deployer-git --save 在本地修改完成了，就可以上传到GitHub上，输入 1hexo d (或 hexo deploy ) 此时可以在浏览器地址栏输入根目录下 _config.yml 文件中的 url 选择 Hexo官方主题，并配置主题。例如配置 NexT 主题。此处花的时间会多一点。修改完再次执行步骤6，7。]]></content>
+      <content type="text"><![CDATA[准备工作：搭建Hexo博客,要 安装 Node.js 安装 Git 在 GitHub 上注册账号 常用的 hexo 命令12345678hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口是4000）hexo deploy #部署到GitHubhexo clean #清除缓存 网页正常情况下可以忽略此条命令hexo new &quot;postName&quot; #新建文章hexo new page &quot;pageName&quot; #新建页面hexo help #查看帮助hexo version #查看Hexo版本 搭建博客： 在 GitHub 上新建一个仓库 blog ,将仓库克隆到本地在 git-bash 上输入命令，SSH 即刚刚复制的代码 1git clone SSH 全局安装 Hexo,输入 1npm i -g hexo (或 npm install -g hexo) 进入克隆出来的本地仓库 blog，输入 123hexo inithexo g (或 hexo generate)hexo s (或 hexo server) 打开浏览器，输入 localhost:4000，看到的界面即 Hexo 的默认主题。 打开根目录下的站点配置文件 _config.yml (区别 theme下的主题配置文件 _config.yml )，可以参考 hexo配置教程 填写信息。填写时 : 后的空格不能省略。下面用户名为 GitHub 的用户名。（你必须建一个这样的仓库：用户名.github.io，并且这个仓库里面需有一个index.html） 12url: https:用户名.github.io/blogroot: /blog 在 _config.yml 文件的最下面有个 deploy: 123type: gitrepository: github上blog的SSHbranch: gh-pages 在 git-bash 上，输入 12hexo ghexo s 此时可以再次打开浏览器，刷新 localhost:4000，看看刚刚修改的内容是否显示了。 回到 git-bash 上，先安装一个插件，这样才能上传到 GitHub 上，输入 1npm install hexo-deployer-git --save 在本地修改完成了，就可以上传到GitHub上，输入 1hexo d (或 hexo deploy ) 此时可以在浏览器地址栏输入根目录下 _config.yml 文件中的 url 选择 Hexo官方主题，并配置主题。例如配置 NexT 主题。此处花的时间会多一点。修改完再次执行步骤6，7。]]></content>
     </entry>
 
     
