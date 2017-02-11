@@ -434,8 +434,8 @@
             
               
                 
-                <a class="post-title-link" href="/blog/2017/02/14/returnFunction/" itemprop="url">
-                  函数作为返回值
+                <a class="post-title-link" href="/blog/2017/02/14/FunctionAsPara/" itemprop="url">
+                  js函数作为参数
                 </a>
               
             
@@ -448,7 +448,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-14T13:26:42+08:00" content="2017-02-14">
+            <time itemprop="dateCreated" datetime="2017-02-14T20:22:43+08:00" content="2017-02-14">
               2017-02-14
             </time>
           </span>
@@ -478,8 +478,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/2017/02/14/returnFunction/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/returnFunction/" itemprop="commentsCount"></span>
+                <a href="/blog/2017/02/14/FunctionAsPara/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/14/FunctionAsPara/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -489,7 +489,7 @@
 
           
           
-             <span id="/blog/2017/02/14/returnFunction/" class="leancloud_visitors" data-flag-title="函数作为返回值">
+             <span id="/blog/2017/02/14/FunctionAsPara/" class="leancloud_visitors" data-flag-title="js函数作为参数">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -513,11 +513,145 @@
       
         
           
-          
-          
+          12345678910var max = 15;var fn = function(x) &#123;    if(x&gt;max)&#123;        console.log(x);    &#125;&#125;;(function(f)&#123;    var max = 100; 
+          ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/blog/2017/02/14/returnFunction/#more" rel="contents">
+            <a class="btn" href="/blog/2017/02/14/FunctionAsPara/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2017/02/13/returnFunction/" itemprop="url">
+                  js函数作为返回值
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-13T13:26:42+08:00" content="2017-02-13">
+              2017-02-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2017/02/13/returnFunction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/13/returnFunction/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/blog/2017/02/13/returnFunction/" class="leancloud_visitors" data-flag-title="js函数作为返回值">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          js函数内返回一个内部函数之前对内部函数作为返回值的调用一直模模糊糊，后来在segmentfault见了一篇文章，这才理清了思路。今天把我就把它总结一下。12345678910111213function createCompareFunction(pro)&#123;    return func
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog/2017/02/13/returnFunction/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -816,140 +950,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/2017/02/07/prototype/" itemprop="url">
-                  JavaScript原型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-02-07T11:36:18+08:00" content="2017-02-07">
-              2017-02-07
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/blog/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/blog/2017/02/07/prototype/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/07/prototype/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/blog/2017/02/07/prototype/" class="leancloud_visitors" data-flag-title="JavaScript原型">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          　　对象是属性的集合，函数也是一种对象，每一个函数都有一个属性prototype,它的属性值指向一个对象，而这个对象有一个constructor属性，属性值又指向函数。图解如下，SuperType是一个函数原型对象除了constructor属性，还有其他的属性。例如Object：例如：12345fu
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/blog/2017/02/07/prototype/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -995,7 +995,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/blog/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
